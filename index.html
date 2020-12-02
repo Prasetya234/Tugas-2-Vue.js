@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 2</title>
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+
+    <!-- Style css-->
+    <link rel="stylesheet" href="style.css">
+     <!--Engine Vue.js-->
+     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.js"></script>
+     <script type="module">
+     import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.0/dist/vue.esm.browser.js'
+     </script>
+     <!-- Menyisipkan Vue JS -->
+     <script src="https://cdn.jsdelivr.net/npm/vue.dist.vue.js"></script>
+     <!--Vue  js engginer 2-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.25/vue.min.js"></script>
+     <style>
+       body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: url(1.webp) no-repeat;
+            background-size: cover;
+        }
+     </style>
+    </head>
+<body>
+    <div id="auth">
+        <!-- Login Template -->
+        <template v-if="auth===true">
+          <div class="login-box" >
+            <h1>Login</h1>
+            <div class="textbox">
+                    <input  type="text" placeholder="Username">
+                  </div>
+                  <div class="textbox">
+                    <input type="password" placeholder="Password">
+                  </div>
+                  <div class="form-group">
+                    <a href="hi.html" class="btn btn-primary btn-sm">Login</a>
+                  <a href="hi.html" class="btn btn-primary btn-sm" v-on:click="auth = false">Register</a>
+                  </div>  
+                </div>
+          </div>
+        </template>
+        <!-- End of Login Template -->
+      
+        <!-- Register Template -->
+        <template v-else-if="auth===false">
+          <div class="login-box">
+            <h1>Register</h1>
+            <div class="card-body">
+              <div class="form-group">
+                <input class="form-control form-control-sm" type="text" placeholder="E - Mail">
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-sm">Register</button>
+              </div>
+            <a href="#" class="card-link" v-on:click="auth = true">Login</a>
+          </div>
+        </div>
+      
+        </template>
+        <!-- End of Register Template -->
+      </div>
+      
+      <script type="text/javascript">
+      new Vue({
+        el: '#auth',
+        data: {
+            auth: true
+        }
+      })
+      </script>
+</body>
+</html>

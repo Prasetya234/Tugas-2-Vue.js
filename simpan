@@ -1,0 +1,41 @@
+<!--card-->
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--input-->
+ <center>
+         <!--Input Binding-->
+        <div id="app2">
+        <input type="text" v-model="nama" placeholder="nama kamu">Nama lengkap:  <br>
+        <input type="text" v-model="tanggal" placeholder="Tanggal lahir">Tanggal Lahir: <br>
+        <!--Radio Binding-->
+        <div id="app">
+            <input type="radio" v-model="lesson" value="Dimana berbagai keinginan bisa di mulai dari sini. xixix">html
+            <input type="radio" v-model="lesson" value="Dimana berbagai simbol yang harus di ingat yang membuat  tidak paham">css
+            <p>{{ lesson }}</p>
+        </div>
+        <!--End RAdio Binding-->
+        <input type="text" v-model="no" placeholder="No Hp">No Hp:<br>
+        <template-baru :nama="nama" :no="no" :tanggal="tanggal"></template-baru>
+        </div>
+        <!--End Input Binding-->
+        </center>

@@ -1,0 +1,79 @@
+<div class="row" id="app2">
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+                <img src="3.jpg" class="card-img-top" alt="...">
+              <h5 class="card-title">Nama Lengkap:</h5>
+              <p class="card-text"><input type="text" v-model="nama" placeholder="nama kamu"></p>
+              <h5 class="card-title">Nama Lengkap:</h5>
+              <p class="card-text"><input type="text" v-model="tanggal" placeholder="Tanggal lahir"></p>
+              <h5 class="card-title">No Hp</h5>
+              <p class="card-text"><input type="text" v-model="no" placeholder="No Hp"></p>
+              <template-baru :nama="nama" :no="no" :tanggal="tanggal"></template-baru>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6" id="app">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Jenis Kelaminn</h5>
+              <p class="card-text"><input type="radio" v-model="lesson" value="Dimana berbagai keinginan bisa di mulai dari sini. xixix">html
+                <input type="radio" v-model="lesson" value="Dimana berbagai simbol yang harus di ingat yang membuat  tidak paham">css
+                <p>{{ lesson }}</p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <hr/>
+        <template id="post-template">
+        <div id="app2">
+            <table class="table table-hover table-dark">
+                <thead>
+                  <tr>
+                    <td>Nama</td>
+                    <td>Tanggal Lahir</td>
+                    <td>No Hp</td>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ nama }}</td>
+                    <td>{{ tanggal }}</td>
+                    <td>{{ no }}</td>
+                   </tr>
+                </tbody>
+                </table>
+        </div>
+    </template>
+    <script>
+        Vue.component('template-baru', {
+            template: '#post-template',
+            props: ['nama','tanggal','no']
+        });
+
+        var vo = new Vue({
+            el : '#app',
+            data: {
+                nama: null,
+                tanggal: null,
+                no: null
+            }
+        });
+        
+        var vo = new Vue({
+            el : '#app3',
+            data: {
+                nama: null,
+                tanggal: null,
+                no: null
+            }
+        });
+
+        var vo = new Vue({
+            el : '#app2',
+            data: {
+                lesson : []
+            },
+        });
+    </script>
